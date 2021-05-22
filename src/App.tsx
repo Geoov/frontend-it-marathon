@@ -10,22 +10,12 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/education">Education</Link>
-            </li>
-          </ul>
-        </nav>
 
         <Switch>
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/education">
+          <Route path="/education">
             <Education />
           </Route>
         </Switch>
