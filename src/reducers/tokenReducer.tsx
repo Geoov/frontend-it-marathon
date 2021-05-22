@@ -14,7 +14,6 @@ export const tokenReducer = (
 ) => {
     switch (action.type) {
         case 'SET_TOKEN': {
-            console.log('here')
             return { ...state, token: [action.payload] }
         }
         default:

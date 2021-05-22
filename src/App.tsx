@@ -56,7 +56,10 @@ function App() {
         }
     }
     useEffect(() => {
-        dispatch({ type: 'SET_TOKEN', payload: loadState() })
+        let token = loadState()
+        if (token != null) {
+            dispatch({ type: 'SET_TOKEN', payload: token })
+        }
     })
     return (
         <BrowserRouter>

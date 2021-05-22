@@ -78,7 +78,6 @@ export default function SwipeableTemporaryDrawer() {
             </List>
             <Divider />
             <List>
-                {token.length}
                 {token == null ? (
                     <Link to="/login">
                         <ListItem button>
