@@ -54,23 +54,21 @@
     margin: 120px 0;
 
     .container {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+
+      .MuiCard-root {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex: 1;
-
-        .MuiCard-root {
-            display: flex;
-            flex-direction: column;
-            flex:1;
-            margin: 0 20px;
-            height: 250px;
-            justify-content: center;
-            align-items: center;
-            background-color: #867ae9;
-            color: #eeeeee;
-
-            
-        }
+        margin: 0 20px;
+        height: 250px;
+        justify-content: center;
+        align-items: center;
+        background-color: #867ae9;
+        color: #eeeeee;
+      }
     }
   }
 }
