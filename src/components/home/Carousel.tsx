@@ -46,9 +46,7 @@ function EducationCarousel() {
 
 function Item(props: any) {
     return (
-        <div
-            className="slider-container"
-            style={{ backgroundColor: `${props.item.backgroundSlider}` }}>
+        <div className="slider-container">
             <div className="slider-image">
                 <div
                     className="image-wrapper"

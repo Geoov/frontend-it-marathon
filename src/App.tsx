@@ -4,6 +4,7 @@ import './App.scss'
 import Header from './shared/header/Header'
 import Home from './components/home/Home'
 import Login from './components/login/Login'
+import Register from './components/register/Register'
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
@@ -70,6 +71,7 @@ function App() {
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/login" component={Login} />
+                        <Route exact path="/register" component={Register} />
                     </Switch>
                 </main>
             </div>

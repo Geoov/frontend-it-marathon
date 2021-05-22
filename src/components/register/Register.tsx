@@ -1,17 +1,11 @@
 import React, { useState } from 'react'
-import {
-    Button,
-    Card,
-    Snackbar,
-    TextField,
-    Typography,
-} from '@material-ui/core'
+import { Button, Card, TextField, Typography } from '@material-ui/core'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 // import { Store } from '../Store'
 import { tokenState } from '../../reducers/tokenReducer'
 
-import './Login.scss'
+import './Register.scss'
 import { useHistory } from 'react-router-dom'
 
 function App() {
@@ -23,24 +17,21 @@ function App() {
     )
 
     const dispatch = useDispatch()
-
     const history = useHistory()
 
+    function handleOnSubmit() {
+        history.push(`/`)
+    }
     function sendLogin() {
         axios({
             method: 'post',
-            url: process.env.REACT_APP_API_URL + '/authenticate',
+            url: process.env.REACT_APP_API_URL + '/register',
             data: {
                 username: username,
                 password: password,
             },
         })
-            .then((res) => {
-                if (res.data == null) {
-                    showError()
-                }
-                return res.data
-            })
+            .then((res) => res.data)
             .then((data) => {
                 if (data.token != null) {
                     let token: string
@@ -48,27 +39,8 @@ function App() {
                     dispatch({ type: 'SET_TOKEN', payload: token })
 
                     localStorage.setItem('token', token)
-
-                    history.push(`/`)
                 }
             })
-            .catch(() => {
-                showError()
-            })
-    }
-
-    const [open, setOpen] = React.useState(false)
-
-    const showError = () => {
-        setOpen(true)
-    }
-
-    const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
-        if (reason === 'clickaway') {
-            return
-        }
-
-        setOpen(false)
     }
 
     return (
@@ -96,14 +68,12 @@ function App() {
                     }}
                 />
                 <br />
-                <Button variant="contained" color="primary" onClick={sendLogin}>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleOnSubmit}>
                     Conectare
                 </Button>
-                <Snackbar
-                    open={open}
-                    autoHideDuration={6000}
-                    onClose={handleClose}
-                    message="Parola incorecta!"></Snackbar>
             </Card>
         </div>
     )

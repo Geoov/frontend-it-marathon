@@ -77,38 +77,58 @@ export default function SwipeableTemporaryDrawer() {
                 </Link>
             </List>
             <Divider />
-            <List>
+            <React.Fragment>
                 {token == null ? (
-                    <Link to="/login">
-                        <ListItem button>
-                            <ListItemIcon>
-                                <ExitToAppIcon />
-                            </ListItemIcon>
-                            <ListItemText primary={'Conectare'} />
-                        </ListItem>
-                    </Link>
+                    <React.Fragment>
+                        <List>
+                            <Link to="/login">
+                                <ListItem button>
+                                    <ListItemIcon>
+                                        <ExitToAppIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary={'Conectare'} />
+                                </ListItem>
+                            </Link>
+                        </List>
+                        <Divider />
+                        <List>
+                            <Link to="/register">
+                                <ListItem button>
+                                    <ListItemIcon>
+                                        <AssignmentIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary={'Register'} />
+                                </ListItem>
+                            </Link>
+                        </List>
+                    </React.Fragment>
                 ) : (
-                    <Link to="/">
-                        <ListItem button>
-                            <ListItemIcon>
-                                <HomeIcon />
-                            </ListItemIcon>
-                            <ListItemText primary={'Contul meu'} />
-                        </ListItem>
-                    </Link>
+                    <React.Fragment>
+                        <List>
+                            <Link to="/">
+                                <ListItem button>
+                                    <ListItemIcon>
+                                        <HomeIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary={'Contul meu'} />
+                                </ListItem>
+                            </Link>
+                        </List>
+                        <Divider />
+                        <List>
+                            <Link to="/register">
+                                <ListItem button>
+                                    <ListItemIcon>
+                                        <AssignmentIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary={'Register'} />
+                                </ListItem>
+                            </Link>
+                        </List>
+                    </React.Fragment>
                 )}
-            </List>
+            </React.Fragment>
             <Divider />
-            <List>
-                <Link to="/register">
-                    <ListItem button>
-                        <ListItemIcon>
-                            <AssignmentIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'Register'} />
-                    </ListItem>
-                </Link>
-            </List>
         </div>
     )
 
